@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "net_cost": 100
+    },
+    {
+      "id": 2,
+      "title": "Product 2",
+      "net_cost": 200
+    }
+  ],
+  "tax": 0.1,
+  "margin": 0.2
+}
