@@ -16,17 +16,17 @@ def writeFile(data,afile):
     return
 
 def parseJson(data):
-    tax=data['tax']
-    margin=data['margin']
-    total_price=0
-
+    tax = data['tax']
+    margin = data['margin']
+    total_price = 0
+    total_net_cost = 0
     for i in data['products']:
-        i['price']= i['net_cost']+i['net_cost']*(tax*0.01)+i['net_cost']*(margin*0.01)
-        print(i['price'])
-        total_price+=i['price']
+        total_net_cost += i['net_cost']
+        i['price'] = i['net_cost']+i['net_cost']*(tax*0.01)
+        total_price += i['price']
         del i['net_cost']
 
-    data['total_price']=total_price
+    data['total_price'] = total_price + (total_net_cost*(margin*0.01))
     del  data['tax']
     del  data['margin']
 
